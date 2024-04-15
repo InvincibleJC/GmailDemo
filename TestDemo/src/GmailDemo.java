@@ -1,4 +1,3 @@
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -27,31 +26,43 @@ public class GmailDemo
         driver.findElement(By.xpath("//*[@id=\"CybotCookiebotDialogBodyButtonAccept\"]")).click();
         
        //wait for page
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         
         //Select "Use Google Account"
-        driver.findElement(By.xpath("/html/body/main/div/div[1]/div[2]/div/a[1]")).click();
+        //driver.findElement(By.xpath("/html/body/main/div/div[1]/div[2]/div/a[1]")).click();
+        //driver.findElement(By.xpath("//*[@id=\"user_email\"]")).click();
         
         //Type Email Address
-        driver.findElement(By.xpath("//*[@id=\"identifierId\"]")).sendKeys("testerteste462@gmail.com");	
+        //driver.findElement(By.xpath("//*[@id=\"identifierId\"]")).sendKeys("testerteste462@gmail.com");	
+        driver.findElement(By.xpath("//*[@id=\"user_email\"]")).sendKeys("Jasmine.b.carter@accenture.com");
        
         //wait for page
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
        
         // Locate next button
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[1]/div/div/button")).click();
+        //driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[1]/div/div/button")).click();
+        driver.findElement(By.xpath("/html/body/main/div/div[1]/form/div[3]/a")).click();
+        
+       //wait for page
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        
+        //WebElement passwordtext = driver.findElement(By.id("password"));
+        //passwordtext.click();
+        //passwordtext.sendKeys("Testemialpls007");
         
         //Enter Password
+        //driver.findElement(By.id("password")).sendKeys("Testemialpls007");
         //driver.findElement(By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input")).sendKeys("Testemialpls007");
         ///html/body/div[1]/div[1]/div[2]/c-wiz/div/div[2]/div/div/div[1]/form/span/section[2]/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input
-        driver.findElement(By.id("password")).sendKeys("Testemialpls007");
+        driver.findElement(By.xpath("//*[@id=\"user_password\"]")).sendKeys("Eahsar7!");
         
         //wait for page
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         
         //submit credentials
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[1]/div/div/button")).click();
-        
+        //driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[3]/div/div[1]/div/div/button")).click();
+        ///html/body/main/div/div[1]/form/div[2]/div[3]/input
+        driver.findElement(By.xpath("/html/body/main/div/div[1]/form/div[2]/div[3]/input")).click();
         
         //Go to demo inbox
         //driver.findElement(By.xpath("//a[@title='Demo inbox']")).click();
